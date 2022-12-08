@@ -151,8 +151,7 @@ print(f"actual_size_directory_tree sizes: {actual_size_directory_tree}")
 total_sum = sum_dirs_less_than(actual_size_directory_tree, max_dir_size_for_summing)
 print(f"dirs_to_sum: {total_sum}")
 print("---------- wrong answers ----------")
-wrong_answers = {1513209, 1969677, 1116292}
-print(wrong_answers)
+print({1513209, 1969677, 1116292})
 print("========== end pt 1 ==========\n\n")
 
 print("########## start pt 2 ##########")
@@ -173,6 +172,5 @@ dir_path, dir_size = find_smallest_directory_greater_than_or_equal_to(directory_
 print(f"> directory to delete: {dir_path:<12}")
 print(f"> directory size:      {dir_size:>12,}")
 print("---------- wrong answers ----------")
-wrong_answers = {}
-print(wrong_answers)
+print({})
 print("========== end pt 2 ==========")
