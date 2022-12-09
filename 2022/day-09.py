@@ -128,8 +128,12 @@ print({})
 print("========== end pt 1 ==========\n\n")
 
 print("########## start pt 2 ##########")
+segments = [(0,0)]*10
+visits = [(0,0)]
+for direction in input_s2.split("\n"):
+    segments, visits = move_long_rope(segments, direction, visits)
+print(len(visits))
 segments = [(0,0)]*11
-print(segments)
 visits = [(0,0)]
 for direction in input.split("\n"):
     segments, visits = move_long_rope(segments, direction, visits)
