@@ -78,9 +78,9 @@ def move_long_rope(segments, vector, visits):
         segments[0] = (x_1, y_1)
         # print(f"{step} ({direction}): {segments[0]}")
         for s in range(1, len(segments)):
+            x_1, y_1 = segments[s-1]
+            x_2, y_2 = segments[s]
             if 1.5 < calc_distance(segments[s-1], segments[s]):
-                x_1, y_1 = segments[s-1]
-                x_2, y_2 = segments[s]
                 if 2 < calc_distance(segments[s-1], segments[s]):
                     # diagonal
                     x_2 = x_2 + 1 if x_1 > x_2 else x_2 - 1
