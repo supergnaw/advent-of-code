@@ -80,16 +80,17 @@ def move_long_rope(segments, vector, visits):
         for s in range(1, len(segments)):
             x_1, y_1 = segments[s-1]
             x_2, y_2 = segments[s]
+            # Max legal diagonal distance is 1.4 (2^.5)
             if 1.5 < calc_distance(segments[s-1], segments[s]):
+                # if distance is 2.2 or more, it was diagonal, and moved diagonal again
                 if 2 < calc_distance(segments[s-1], segments[s]):
-                    # diagonal
                     x_2 = x_2 + 1 if x_1 > x_2 else x_2 - 1
                     y_2 = y_2 + 1 if y_1 > y_2 else y_2 - 1
+                # if x is the same, it moved vertically
                 elif x_2 == x_1:
-                    # move up/down
                     y_2 = y_2 + 1 if y_1 > y_2 else y_2 - 1
+                # if y is the same, it moved horizontally
                 elif y_2 == y_1:
-                    # move left/right
                     x_2 = x_2 + 1 if x_1 > x_2 else x_2 - 1
                 segments[s] = (x_2, y_2)
             if s == len(segments) - 1 and segments[s] not in visits:
